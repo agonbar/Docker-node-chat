@@ -2,12 +2,15 @@ FROM google/nodejs
 
 MAINTAINER Adrian Gonzalez Barbosa "adrian.gonzalez.barbosa@gmail.com"
 
-CMD ["mkdir /app"]
-CMD ["chmod 777 /app"]
+RUN mkdir /app
+RUN chmod 777 /app
 
-CMD ["git clone https://github.com/agonbar/nodejs-chat.git /app"]
+RUN git clone https://github.com/agonbar/nodejs-chat.git /app/
+RUN mv /app/nodejs-chat/* /app
+RUN mv /app/nodejs-chat/.* /app
+RUN rmdir /app/nodejs-chat
 
-CMD ["npm install /app/package.json"]
-CMD ["docker /app/server.js"]
+RUN npm install /app/package.json
+RUN node /app/server.js
 
 EXPOSE 8082
