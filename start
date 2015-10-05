@@ -1,3 +1,3 @@
 cd /app
 npm install
-pm2 start /app/server.js
+node server.js

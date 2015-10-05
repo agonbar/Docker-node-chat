@@ -2,8 +2,6 @@ FROM google/nodejs
 
 MAINTAINER Adrian Gonzalez Barbosa "adrian.gonzalez.barbosa@gmail.com"
 
-RUN npm install -g pm2
-
 RUN mkdir /app
 RUN chmod 755 /app
 
