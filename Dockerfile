@@ -7,8 +7,7 @@ CMD ["chmod 777 /app"]
 
 CMD ["git clone https://github.com/agonbar/nodejs-chat.git /app"]
 
-ADD start /start
-CMD ["chmod 777 /start"]
-CMD ["/start"]
+CMD ["npm install /app/package.json"]
+CMD ["docker /app/server.js"]
 
 EXPOSE 8082
