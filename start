@@ -1,0 +1,3 @@
+cd /app
+npm install
+pm2 start -x server.js --no-daemon
