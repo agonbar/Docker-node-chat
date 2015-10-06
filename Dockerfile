@@ -8,6 +8,8 @@ WORKDIR "/app"
 RUN git clone https://github.com/agonbar/nodejs-chat.git /app 
 RUN chmod 777 -R /app
 RUN npm install
-CMD ["ls /app"]
+ADD start.sh /start.sh
+RUN chmod 777 /start.sh
+CMD ["/start.sh"]
 
 EXPOSE 8082
